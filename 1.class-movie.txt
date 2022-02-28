@@ -1,0 +1,101 @@
+QUESTION:
+https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+
+ANSWER:
+//creating class movie with specified properties.
+class movie {
+  constructor(title,studio,rating) {
+      this.title = title;
+      this.studio =studio;
+      this.rating = rating||"PG"
+      console.log("iam parent class constructor")
+      
+  }
+//logic to get movies with rating "PG"
+  getPG (movies){
+      let pgrated = [];
+      for (let i=0; i<movies.length; i++) {
+          if (movies[i].rating ===" " ) {
+              movies[i].rating = this.rating;
+          }
+             if(movies[i].rating === "PG"){
+              pgrated.push(movies[i].name);
+               }   
+      }
+
+      return console.log(pgrated);
+   }
+
+}
+class casinoroyale extends movie {
+  constructor(title,studio,rating) {
+      super(title,studio,rating);
+  }
+   
+}
+//object to access class movie
+let movieobj = new movie();
+//input array with movies and ratings and calling the method to print "PG" rated movies.
+(movieobj.getPG([
+   {
+       name:"jaibhim",
+       rating :"PG"
+   },
+   {
+       name:"PK",
+       rating:"PG"
+   },
+   {
+       name:"raghav 2.0",
+       rating : "X"
+   },
+   {
+      name: "master",
+      rating: " "
+
+   },
+   {
+       name: "Casino royale",
+       rating:"PG13"
+
+   },
+  ]))
+//creating casino royale to access child class
+let casinoroyaleobj = new casinoroyale ( "Casino Royale","Eon Productions","PG13");
+console.log(`title:${casinoroyaleobj.title}`)
+
+
+OUTPUT:
+
+PS C:\Users\Lenovo\Desktop\guvi> node script.js
+iam parent class constructor
+[ 'jaibhim', 'PK', 'master' ]
+iam parent class constructor 
+title:Casino Royale
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

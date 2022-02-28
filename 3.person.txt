@@ -1,0 +1,68 @@
+QUESTION:
+Write a “person” class to hold all the details.
+
+ANSWER:
+class person {
+    constructor(firstname,lastname,age,city,company,designation,salary,experience) {
+    this.firstname=firstname;
+    this.lastname = lastname;
+    this.age = age;
+    this.city = city;
+    this.company=company;
+    this.designation=designation;
+    this.salary = salary;
+    this.experience =experience;
+    }
+}
+class employee extends person {
+    constructor (firstname,lastname,age,city,company,designation,salary,experience) {
+        super(firstname,lastname,age,city,company,designation,salary,experience);
+    }
+    getData() {
+        let employeedata =  `
+        Name:${this.firstname} ${this.lastname}
+        Age:${this.age}
+        City:${this.city}
+        Company: ${this.company}
+        Designation:${this.designation}
+        Salary:${this.salary}
+        Experience:${this.experience}
+        `
+        console.log(employeedata)
+    }
+}
+let employer = new employee ("steve","jobs",32,"mumbai","apple","CEO","10,00,000",10);
+employer.getData();
+let employer1 = new employee ("Rakesh","kumar",25,"Delhi","amazon","SDE","1,00,000",3);
+employer1.getData();
+let employer2 = new employee ("Suresh","kumar",28,"Chennai","Zoho","SDE","3,00,000",5);
+employer2.getData();
+
+OUTPUT:
+PS C:\Users\Lenovo\Desktop\guvi> node script.js
+
+        Name:steve jobs 
+        Age:32
+        City:mumbai     
+        Company: apple  
+        Designation:CEO 
+        Salary:10,00,000
+        Experience:10
+
+
+        Name:Rakesh kumar
+        Age:25
+        City:Delhi
+        Company: amazon
+        Designation:SDE
+        Salary:1,00,000
+        Experience:3
+
+
+        Name:Suresh kumar
+        Age:28
+        City:Chennai
+        Company: Zoho
+        Designation:SDE
+        Salary:3,00,000
+        Experience:5
